@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "eye": {
+      "type": "string",
+      "enum": ["OD", "OS"]
+    },
+    "age": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 120
+    },
+    "vision_reduced": {
+      "type": "boolean"
+    },
+    "qc": {
+      "type": "object",
+      "properties": {
+        "fundus_pass": {
+          "type": "boolean"
+        },
+        "macula_view": {
+          "type": "boolean"
+        }
+      },
+      "required": ["fundus_pass", "macula_view"]
+    },
+    "dr_grade": {
+      "type": ["string", "null"],
+      "enum": ["no_dr", "mild_npdr", "moderate_npdr", "severe_npdr", "pdr", null]
+    },
+    "macula": {
+      "type": "object",
+      "properties": {
+        "edema_prob": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "maximum": 1
+        }
+      },
+      "required": ["edema_prob"]
+    }
+  },
+  "required": ["eye", "age", "vision_reduced", "qc", "dr_grade", "macula"]
+}

@@ -1,0 +1,8 @@
+{"id":"EURETINA_DME_2023","source":"EURETINA DME (2023)","line":"Suspected diabetic macular edema warrants OCT confirmation and timely referral.","short_quote":"Suspected DME → confirm with OCT; refer promptly."}
+{"id":"AAO_DR_PPP","source":"AAO PPP: Diabetic Retinopathy","line":"Moderate NPDR generally requires referral for ophthalmic evaluation.","short_quote":"Moderate NPDR → refer for ophthalmic evaluation."}
+{"id":"AAO_DR_followup","source":"AAO PPP: Diabetic Retinopathy","line":"For mild NPDR without DME, follow-up at 6–12 months is reasonable.","short_quote":"Mild NPDR/no DME → follow-up 6–12 months."}
+{"id":"AAO_DR_urgent_referral","source":"AAO PPP: Diabetic Retinopathy","line":"Proliferative DR or severe NPDR requires prompt retina specialist evaluation.","short_quote":"Severe NPDR/PDR → urgent retina evaluation."}
+{"id":"AAO_symptom_driven_followup","source":"AAO PPP: Diabetic Retinopathy","line":"New or reduced vision merits earlier review regardless of routine intervals.","short_quote":"Reduced vision → earlier review recommended."}
+{"id":"AAO_DR_need_grade","source":"AAO PPP: Diabetic Retinopathy","line":"Management depends on the retinopathy grade; obtain or confirm grading.","short_quote":"Management depends on grade; obtain grading."}
+{"id":"QC_retake_fundus","source":"Quality Control","line":"If fundus or macula view fails QC, retake the image or defer decisions.","short_quote":"QC fail → retake image, defer decisions."}
+{"id":"EURETINA_DME_cutoff","source":"EURETINA DME (2023)","line":"When DME is suspected clinically, OCT is indicated to confirm and guide referral.","short_quote":"DME suspected → OCT indicated; refer."}

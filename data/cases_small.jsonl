@@ -1,0 +1,10 @@
+{"eye":"OD","age":62,"vision_reduced":true,"qc":{"fundus_pass":true,"macula_view":true},"dr_grade":"severe_npdr","macula":{"edema_prob":0.35}}
+{"eye":"OS","age":55,"vision_reduced":false,"qc":{"fundus_pass":true,"macula_view":true},"dr_grade":"moderate_npdr","macula":{"edema_prob":0.20}}
+{"eye":"OD","age":47,"vision_reduced":false,"qc":{"fundus_pass":true,"macula_view":true},"dr_grade":"mild_npdr","macula":{"edema_prob":0.10}}
+{"eye":"OS","age":68,"vision_reduced":false,"qc":{"fundus_pass":true,"macula_view":true},"dr_grade":"no_dr","macula":{"edema_prob":null}}
+{"eye":"OD","age":59,"vision_reduced":false,"qc":{"fundus_pass":true,"macula_view":true},"dr_grade":"no_dr","macula":{"edema_prob":0.78}}
+{"eye":"OS","age":71,"vision_reduced":false,"qc":{"fundus_pass":false,"macula_view":false},"dr_grade":null,"macula":{"edema_prob":null}}
+{"eye":"OD","age":64,"vision_reduced":true,"qc":{"fundus_pass":true,"macula_view":true},"dr_grade":null,"macula":{"edema_prob":0.72}}
+{"eye":"OS","age":51,"vision_reduced":false,"qc":{"fundus_pass":true,"macula_view":true},"dr_grade":"pdr","macula":{"edema_prob":0.65}}
+{"eye":"OD","age":45,"vision_reduced":false,"qc":{"fundus_pass":true,"macula_view":true},"dr_grade":"mild_npdr","macula":{"edema_prob":0.69}}
+{"eye":"OS","age":58,"vision_reduced":false,"qc":{"fundus_pass":true,"macula_view":true},"dr_grade":"mild_npdr","macula":{"edema_prob":0.71}}

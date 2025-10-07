@@ -1,0 +1,96 @@
+meta:
+  profile: "diabetic_retinopathy_triage"
+  version: "1.0.0"
+  entry: "qc_check"
+
+nodes:
+  - id: "qc_check"
+    type: "decision"
+    when: "qc.fundus_pass == true and qc.macula_view == true"
+    goto_true: "grade_check"
+    goto_false: "qc_fail"
+    cite: ["QC_retake_fundus"]
+
+  - id: "qc_fail"
+    type: "action"
+    actions:
+      - type: "abstain"
+        reason: "insufficient image quality"
+    cite: ["QC_retake_fundus"]
+
+  - id: "grade_check"
+    type: "decision"
+    when: "dr_grade != null"
+    goto_true: "severity_routing"
+    goto_false: "missing_grade"
+
+  - id: "missing_grade"
+    type: "action"
+    actions:
+      - type: "abstain"
+        reason: "diabetic retinopathy grade not available"
+    cite: ["AAO_DR_need_grade"]
+
+  - id: "severity_routing"
+    type: "decision"
+    when: "dr_grade == 'pdr' or dr_grade == 'severe_npdr'"
+    goto_true: "urgent_referral"
+    goto_false: "moderate_check"
+
+  - id: "urgent_referral"
+    type: "action"
+    actions:
+      - type: "suggest_referral"
+        specialty: "retina"
+        urgency: "urgent"
+    cite: ["AAO_DR_urgent_referral"]
+
+  - id: "moderate_check"
+    type: "decision"
+    when: "dr_grade == 'moderate_npdr'"
+    goto_true: "moderate_referral"
+    goto_false: "dme_check"
+
+  - id: "moderate_referral"
+    type: "action"
+    actions:
+      - type: "suggest_referral"
+        specialty: "retina"
+        urgency: "2-4_weeks"
+    cite: ["AAO_DR_PPP"]
+
+  - id: "dme_check"
+    type: "decision"
+    when: "macula.edema_prob >= 0.70"
+    goto_true: "dme_referral"
+    goto_false: "followup_routing"
+
+  - id: "dme_referral"
+    type: "action"
+    actions:
+      - type: "order_test"
+        test_type: "OCT_macula"
+      - type: "suggest_referral"
+        specialty: "retina"
+        urgency: "2-4_weeks"
+    cite: ["EURETINA_DME_2023", "EURETINA_DME_cutoff"]
+
+  - id: "followup_routing"
+    type: "decision"
+    when: "vision_reduced == true"
+    goto_true: "early_followup"
+    goto_false: "routine_followup"
+
+  - id: "early_followup"
+    type: "action"
+    actions:
+      - type: "set_followup"
+        interval: "3m"
+    cite: ["AAO_symptom_driven_followup"]
+
+  - id: "routine_followup"
+    type: "action"
+    actions:
+      - type: "set_followup"
+        interval: "12m"
+    cite: ["AAO_DR_followup"]

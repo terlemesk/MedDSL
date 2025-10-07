@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "meta": {
+      "type": "object",
+      "properties": {
+        "profile": {"type": "string"},
+        "version": {"type": "string"},
+        "entry": {"type": "string"}
+      },
+      "required": ["profile", "version"]
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {"type": "string"},
+          "type": {
+            "type": "string",
+            "enum": ["decision", "action"]
+          },
+          "when": {"type": "string"},
+          "actions": {
+            "type": "array",
+            "items": {"type": "object"}
+          },
+          "next": {"type": "string"},
+          "goto_true": {"type": "string"},
+          "goto_false": {"type": "string"},
+          "cite": {"type": "array", "items": {"type": "string"}}
+        },
+        "required": ["id", "type"]
+      }
+    }
+  },
+  "required": ["meta", "nodes"]
+}
